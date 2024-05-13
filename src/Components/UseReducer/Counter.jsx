@@ -15,7 +15,7 @@ const Counter = () => {
           <p> <Button variant="success" onClick={()=>{dispatch({type:'INC',payload:10})}}>+</Button> 
            {state>0 ? (<Button variant="danger" onClick={()=>{dispatch({type:'DEC',payload:5})}}>-</Button>) 
            : 
-           (<Button variant="danger">-</Button>)}</p>
+           (<Button className="pointer" variant="danger">-</Button>)}</p>
            
 
           
