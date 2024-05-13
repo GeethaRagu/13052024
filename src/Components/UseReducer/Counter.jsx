@@ -7,13 +7,20 @@ const Counter = () => {
     const[state,dispatch] = useReducer(ReducerAction,0);
     
     return (
-        <div>
-             <p>This counter increments value by 10 and decrements value by 5 </p>
-           Value : {state}<br/>
-            <input type="text" value={state} id="result"/>
-           <Button variant="success" onClick={()=>{dispatch({type:'INC',payload:10})}}>+</Button> 
-           <Button variant="danger" onClick={()=>{dispatch({type:'DEC',payload:5})}}>-</Button>
-           <Button onClick={()=>{dispatch({type:'RESET',payload:0})}}>RESET</Button>
+        <div className="counter">
+            <h1>Counter</h1>
+             
+            <p>Value : <strong>{state}</strong>  <Button onClick={()=>{dispatch({type:'RESET',payload:0})}}>RESET</Button></p>
+            
+          <p> <Button variant="success" onClick={()=>{dispatch({type:'INC',payload:10})}}>+</Button> 
+           {state>0 ? (<Button variant="danger" onClick={()=>{dispatch({type:'DEC',payload:5})}}>-</Button>) 
+           : 
+           (<Button variant="danger">-</Button>)}</p>
+           
+
+          
+           <br/>
+           <p><small>Note: This counter increments value by 10 and decrements value by 5</small></p>
         </div>
     );
 };
