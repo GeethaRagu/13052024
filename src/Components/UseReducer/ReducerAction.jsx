@@ -23,7 +23,9 @@ export default function ReducerAction(state,action){
              case 'DEC' :{
                   return state-action.payload
                }  
-                
+               case 'RESET' :{
+                return action.payload
+             }  
             
               default: {
                    return state
